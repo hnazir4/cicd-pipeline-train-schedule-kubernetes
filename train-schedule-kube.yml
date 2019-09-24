@@ -21,14 +21,14 @@ metadata:
     app: train-schedule
 spec:
   replicas: 2
-  strategy:
-  type: RollingUpdate
-  rollingUpdate:
-    maxSurge: 1
-    maxUnavailable: 25%
   selector:
     matchLabels:
       app: train-schedule
+  strategy:
+  type: RollingUpdate
+  rollingUpdate:
+     maxUnavailable: 25%
+     maxSurge: 1
   template:
     metadata:
       labels:
