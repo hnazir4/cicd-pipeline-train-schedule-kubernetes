@@ -24,10 +24,11 @@ spec:
   selector:
     matchLabels:
       app: train-schedule
-  updateStrategy:
+  strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxUnavailable: 10%
+      maxUnavailable: 0
+      maxSurge: 1
   template:
     metadata:
       labels:
