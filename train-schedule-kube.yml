@@ -33,6 +33,11 @@ spec:
     metadata:
       labels:
         app: train-schedule
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
     spec:
       containers:
       - name: train-schedule
